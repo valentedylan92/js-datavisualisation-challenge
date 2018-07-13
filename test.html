@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
+</head>
+<body>
+  <div class="test"></div>
+
+  <script type="text/javascript">
+  var test = document.querySelectorAll("div")
+  console.log(test)
+    var svg = dimple.newSvg(".test", 800, 600);
+
+     var data = [
+       { "Word":"Hello","Awesomeness":1152 },
+       { "Word":"The", "Awesomeness":362 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"heavily", "Awesomeness":580 },
+       { "Word":"fucking", "Awesomeness":768 },
+       { "Word":"World", "Awesomeness":2500 }
+     ];
+
+     var chart = new dimple.chart(svg, data);
+
+     chart.addCategoryAxis("x", "Word");
+
+     chart.addMeasureAxis("y", "Awesomeness");
+
+     chart.addSeries(null, dimple.plot.area);
+
+     chart.draw();
+
+//   var chart1 = new dimple.chart(svg1);
+// var xAxis = chart1.addCategoryAxis("x", "week");
+// var yAxis = chart1.addMeasureAxis("y", "miles");
+//
+// var data1 = [
+//   [
+//     {week: 'week 1', miles: 1},
+//     {week: 'week 2', miles: 2},
+//     {week: 'week 3', miles: 3},
+//     {week: 'week 4', miles: 4}
+//   ],
+//   [
+//     {week: 'week 1', miles: 2},
+//     {week: 'week 2', miles: 4},
+//     {week: 'week 3', miles: 6},
+//     {week: 'week 4', miles: 8}
+//   ]
+// ];
+//
+// s1 = chart1.addSeries("Bill", dimple.plot.line);
+// s1.data = data1[0];
+//
+// s1.plot=dimple.plot.line;
+// s2 = chart1.addSeries("Sarah", dimple.plot.line);
+//
+// s2.data = data1[1];
+//
+// s2.plot=dimple.plot.line;
+// chart1.draw(1000);
+   </script>
+</body>
+</html>
